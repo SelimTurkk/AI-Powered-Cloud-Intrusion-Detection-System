@@ -1,0 +1,112 @@
+/* public/style.css */
+/* public/style.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0a0f1c;
+    color: #00ffcc;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    padding-top: 60px;
+    background-image: radial-gradient(circle at center, #10182a 0%, #0a0f1c 100%);
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .form-container {
+    background: rgba(10, 20, 30, 0.8);
+    border: 1px solid #00ffcc;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+  }
+  
+  input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1a2332;
+    color: #00ffcc;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  input::placeholder {
+    color: #00ffcc88;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00ffcc;
+    color: #0a0f1c;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #00bfa6;
+  }
+  
+  .toggle-text {
+    margin-top: 25px;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .toggle-text button {
+    background: none;
+    color: #00bfa6;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 15px;
+    padding: 0;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  /* ---- NAVBAR STİLİ ---- */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    border-bottom: 1px solid #00ffcc55;
+  }
+  
+  .navbar a {
+    color: #00ffcc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    transition: 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #00bfa6;
+  }
+  
+  

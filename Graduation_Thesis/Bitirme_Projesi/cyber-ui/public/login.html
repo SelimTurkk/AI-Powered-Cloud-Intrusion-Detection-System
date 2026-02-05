@@ -1,0 +1,177 @@
+<!-- public/login.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Giriş Yap / Üye Ol</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: #00ffcc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: center;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      z-index: -1;
+      object-fit: cover;
+      opacity: 0.25;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,255,204,0.3);
+    }
+
+    .form-container {
+      width: 300px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00ffcc;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #1a2332;
+      color: #00ffcc;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: #00ffcc88;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00ffcc;
+      color: #0a0f1c;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #00bfa6;
+    }
+
+    .toggle-text {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .toggle-text button {
+      background: none;
+      color: #00bfa6;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop id="bg-video">
+    <source src="videos/matrix-bg.mp4" type="video/mp4">
+    Tarayıcınız video öğesini desteklemiyor.
+  </video>
+
+  <div class="container">
+    <div class="form-container">
+      <h2>Giriş Yap</h2>
+      <input type="text" id="loginUsername" placeholder="Kullanıcı Adı">
+      <input type="password" id="loginPassword" placeholder="Şifre">
+      <button onclick="login()">Giriş Yap</button>
+      <p class="toggle-text">Hesabın yok mu? <button id="toggleBtn">Üye Ol</button></p>
+    </div>
+
+    <div class="form-container hidden" id="registerForm">
+      <h2>Üye Ol</h2>
+      <input type="text" id="registerUsername" placeholder="Kullanıcı Adı">
+      <input type="password" id="registerPassword" placeholder="Şifre">
+      <button onclick="register()">Üye Ol</button>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("toggleBtn");
+    const registerForm = document.getElementById("registerForm");
+
+    toggleBtn.addEventListener("click", () => {
+      registerForm.classList.toggle("hidden");
+    });
+
+    async function login() {
+      const username = document.getElementById("loginUsername").value;
+      const password = document.getElementById("loginPassword").value;
+
+      const res = await fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        window.location.href = "/home";
+      } else {
+        alert("Giriş başarısız! Bilgileri kontrol edin.");
+      }
+    }
+
+    async function register() {
+      const username = document.getElementById("registerUsername").value;
+      const password = document.getElementById("registerPassword").value;
+
+      const res = await fetch("/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        alert("Üyelik başarılı! Giriş yapabilirsiniz.");
+      } else {
+        alert(data.message || "Üyelik başarısız!");
+      }
+    }
+  </script>
+</body>
+</html>
