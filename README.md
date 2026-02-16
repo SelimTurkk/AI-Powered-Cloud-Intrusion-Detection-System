@@ -136,7 +136,19 @@ Model evaluation and metric selection were conducted collaboratively by both con
 This project demonstrates how **machine learning and cloud technologies** can be combined to build a **modern, scalable, and effective intrusion detection system**.
 
 It is designed not only as an academic exercise, but as a **practical cybersecurity system** aligned with real-world deployment and operational security requirements.
-The system was developed as a joint effort, combining shared expertise in machine learning, backend services, and cloud deployment.
+
+---
+
+## Contributors
+
+This project was collaboratively designed, implemented, and evaluated by:
+
+- Selim Turkk  
+- Emirhan Umut Azman  
+
+Both contributors were actively involved in all phases of the project, including system design, machine learning model development, backend integration, cloud deployment, testing, and documentation.
+
+The architecture, implementation decisions, and final system integration were carried out jointly through continuous collaboration and mutual review.
 
 ---
 
