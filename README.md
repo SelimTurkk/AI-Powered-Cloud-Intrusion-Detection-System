@@ -21,6 +21,7 @@ The system is designed around three core phases:
 3. **Cloud Deployment**
 
 Training and inference are strictly separated to ensure scalability, maintainability, and real-world usability.
+The system was developed collaboratively by two contributors, with all major design and implementation decisions made jointly.
 
 ---
 
@@ -34,9 +35,13 @@ Training and inference are strictly separated to ensure scalability, maintainabi
 * Containerized deployment support (Docker)
 * Designed for real-world SOC and security monitoring scenarios
 
+The overall feature set was designed and implemented through close collaboration between both contributors.
+
 ---
 
 ## 🏗️ System Architecture
+
+The system architecture was jointly designed and implemented by both contributors to ensure modularity, scalability, and security.
 
 ### 1. Data Collection & Preprocessing
 
@@ -49,14 +54,18 @@ Training and inference are strictly separated to ensure scalability, maintainabi
 * Machine learning models are trained using Python-based frameworks
 * Training is performed offline to reduce production overhead
 * Models are evaluated using security-relevant metrics
+* All training workflows and evaluation processes were developed collaboratively.
 
 ### 3. Model Integration
 
 * The trained model is serialized and loaded into a backend service
 * Inference logic is isolated from training logic
 * The service accepts input data and returns attack/anomaly predictions
+* The integration and inference logic were implemented through shared development and review.
 
 ### 4. Cloud Deployment
+
+The cloud deployment strategy was collaboratively designed and implemented by both contributors.
 
 * Backend service is deployed on cloud infrastructure
 * API endpoints expose the model for real-time or batch analysis
@@ -72,6 +81,8 @@ This project is developed with a **security-first mindset**:
 * Minimal attack surface for the inference service
 * Designed to integrate with existing security pipelines
 * Suitable for SOC environments and automated detection workflows
+
+Security considerations were jointly evaluated and incorporated throughout the development process.
 
 ---
 
@@ -106,6 +117,8 @@ Model performance is evaluated using metrics relevant to intrusion detection, su
 * Precision and recall
 * Model generalization on unseen data
 
+Model evaluation and metric selection were conducted collaboratively by both contributors.
+
 ---
 
 ## 🔮 Future Scope
@@ -123,7 +136,9 @@ Model performance is evaluated using metrics relevant to intrusion detection, su
 This project demonstrates how **machine learning and cloud technologies** can be combined to build a **modern, scalable, and effective intrusion detection system**.
 
 It is designed not only as an academic exercise, but as a **practical cybersecurity system** aligned with real-world deployment and operational security requirements.
+The system was developed as a joint effort, combining shared expertise in machine learning, backend services, and cloud deployment.
 
 ---
 
+This project was developed collaboratively as a joint academic capstone project by two contributors.
 
